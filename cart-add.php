@@ -13,7 +13,6 @@ if(isset($_SESSION['user_id'])) {
         $quantity = $_POST['quantity'];
 
 
-
         $query = "INSERT INTO `user_item`(`user_id`, `item_id`, `status`, `jumlah_barang`) VALUES($user_id, $item_id, 1, ?)";
         $stmt = mysqli_prepare($con, $query);
         mysqli_stmt_bind_param($stmt, "i", $_POST['quantity']);

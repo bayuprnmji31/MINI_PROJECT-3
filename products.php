@@ -118,7 +118,7 @@ require("includes/common.php");
                                 <p><a href="login.php" role="button" class="btn btn-primary btn-block">Beli Sekarang</a></p>
                             <?php } else { ?>
                             <form action="cart-add.php" method="POST">
-                                <input type="hidden" name="product_id" value="1">
+                                <input type="hidden" name="product_id" value="4">
                                 <div class="form-group">
                                     <label for="quantity">Jumlah:</label>
                                     <input type="number" id="quantity" name="quantity" class="form-control" value="1" min="1">
@@ -147,7 +147,7 @@ require("includes/common.php");
                                 <p><a href="login.php" role="button" class="btn btn-primary btn-block">Beli Sekarang</a></p>
                             <?php } else { ?>
                             <form action="cart-add.php" method="POST">
-                                <input type="hidden" name="product_id" value="1">
+                                <input type="hidden" name="product_id" value="5">
                                 <div class="form-group">
                                     <label for="quantity">Jumlah:</label>
                                     <input type="number" id="quantity" name="quantity" class="form-control" value="1" min="1">
@@ -174,7 +174,7 @@ require("includes/common.php");
                                 <p><a href="login.php" role="button" class="btn btn-primary btn-block">Beli Sekarang</a></p>
                             <?php } else { ?>
                             <form action="cart-add.php" method="POST">
-                                <input type="hidden" name="product_id" value="1">
+                                <input type="hidden" name="product_id" value="6">
                                 <div class="form-group">
                                     <label for="quantity">Jumlah:</label>
                                     <input type="number" id="quantity" name="quantity" class="form-control" value="1" min="1">
@@ -201,7 +201,7 @@ require("includes/common.php");
                                 <p><a href="login.php" role="button" class="btn btn-primary btn-block">Beli Sekarang</a></p>
                             <?php } else { ?>
                             <form action="cart-add.php" method="POST">
-                                <input type="hidden" name="product_id" value="1">
+                                <input type="hidden" name="product_id" value="7">
                                 <div class="form-group">
                                     <label for="quantity">Jumlah:</label>
                                     <input type="number" id="quantity" name="quantity" class="form-control" value="1" min="1">
@@ -228,7 +228,7 @@ require("includes/common.php");
                                 <p><a href="login.php" role="button" class="btn btn-primary btn-block">Beli Sekarang</a></p>
                             <?php } else { ?>
                             <form action="cart-add.php" method="POST">
-                                <input type="hidden" name="product_id" value="1">
+                                <input type="hidden" name="product_id" value="8">
                                 <div class="form-group">
                                     <label for="quantity">Jumlah:</label>
                                     <input type="number" id="quantity" name="quantity" class="form-control" value="1" min="1">

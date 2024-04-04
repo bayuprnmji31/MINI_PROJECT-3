@@ -26,6 +26,7 @@ if (!isset($_SESSION['email'])) {
                     <?php
                     $totalItems = 0;
                     $totalPrice = 0;
+                    $sum = 0;
                     $user_id = $_SESSION['user_id'];
                     $query = "SELECT items.price AS Price, items.id AS id, items.name AS Name, user_item.jumlah_barang AS JumlahBarang  
                                 FROM user_item 
@@ -40,7 +41,7 @@ if (!isset($_SESSION['email'])) {
                                 <th>Nama Barang</th>
                                 <th>Jumlah Barang</th>
                                 <th>Harga</th>
-                                <th>Pesanan & Waktu</th>
+                                <th>Waktu pesanan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,10 +50,11 @@ if (!isset($_SESSION['email'])) {
                                 $subtotal = $row["Price"] * $row["JumlahBarang"];
                                 $totalItems += $row["JumlahBarang"];
                                 $totalPrice += $subtotal;
+                                $sum += $totalPrice;
                                 echo '<tr>';
                                 echo '<td><a href="order.php">' . $row["Name"] . '</a></td>';
                                 echo '<td>' . $row["JumlahBarang"] . '</td>';
-                                echo '<td>Rp. ' . $row["Price"] . '</td>';
+                                echo '<td>Rp. ' . $subtotal . '</td>';
                                 $query_time = "SELECT date_time FROM user_item WHERE item_id='" . $row['id'] . "' AND user_id='$user_id' AND status=2";
                                 $result_time = mysqli_query($con, $query_time) or die(mysqli_error($con));
                                 $time_row = mysqli_fetch_array($result_time);
@@ -63,7 +65,7 @@ if (!isset($_SESSION['email'])) {
                             <tr>
                                 <td colspan="1"><b>Total</b></td>
                                 <td><?php echo $totalItems; ?></td>
-                                <?php echo '<td>Rp. ' . $totalPrice . '</td>'; ?>
+                                <?php echo '<td>Rp. ' . $sum . '</td>'; ?>
                                 <td></td>
                             </tr>
                         </tbody>

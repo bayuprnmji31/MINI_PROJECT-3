@@ -72,12 +72,11 @@ if (isset($_SESSION['email']) && isset($_COOKIE['login_time'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="captcha">CAPTCHA:</label>
-                                    <input type="text" class="form-control" id="captcha" name="captcha" required="true">
+                                    <input type="text" class="form-control" id="captcha" name="captcha" required="true" placeholder="Enter the result of <?php echo $captcha_question; ?>">
                                     <small>Enter the result of <?php echo $captcha_question; ?>:</small>
                                 </div>
-
                                 <button type="submit" name="submit" class="btn btn-primary">Login</button><br><br>
-                            </form><br />
+                            </form><br/>
                         </div>
                         <div class="panel-footer">
                             <p>Apakah anda tidak memiliki akun? <a href="signup.php">Daftar Akun</a></p>
