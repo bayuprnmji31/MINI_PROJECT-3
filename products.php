@@ -19,11 +19,10 @@ require("includes/common.php");
         include 'includes/check-if-added.php';
         ?>
         <div class="container" id="content">
-            <div class="jumbotron home-spacer" id="products-jumbotron">
+        <div class="jumbotron home-spacer" id="products-jumbotron">
                 <h1>Selamat Datang Pelanggan G-24!</h1>
                 <p>Nikmati pelayanan kami dengan handal, kami memberikan pelayanan terbaik!</p>
-
-            </div>
+        </div>
             <hr>
             <div class="row text-center" id="">
                 <div class="col-md-3 col-sm-6 home-feature">

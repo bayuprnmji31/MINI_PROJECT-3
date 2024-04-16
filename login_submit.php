@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
         $password = md5($password);
-        $query = "SELECT id, email FROM users WHERE email='$email' AND password='$password'";
+        $query = "SELECT id, email, role FROM users WHERE email='$email' AND password='$password'";
         $result = mysqli_query($con, $query) or die(mysqli_error($con));
         $num = mysqli_num_rows($result);
 
@@ -21,12 +21,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = mysqli_fetch_array($result);
             $_SESSION['email'] = $row['email'];
             $_SESSION['user_id'] = $row['id'];
+            $_SESSION['role'] = $row['role'];
 
             setcookie('email', $row['email'], time() + (86400 * 30), '/');
             setcookie('user_id', $row['id'], time() + (86400 * 30), '/');
 
-            header('location: products.php');
-            exit;
+            if($row['role'] == 0) { 
+                header('location: products.php');
+                exit;
+            } elseif($row['role'] == 1) {
+                header('location: admin_dashboard.php');
+                exit;
+            } elseif($row['role'] == 2) {
+                header('location: super_admin_dashboard.php');
+                exit;
+            }
         }
 
     } else {
